@@ -1,11 +1,16 @@
 <template>
   <section class="container">
-    <p>Hello Nuxt.js</p>
+    <p>{{ message }}</p>
   </section>
 </template>
 
 <script>
 export default {
-  name: 'IndexPage'
+  name: 'IndexPage',
+  data: function() {
+    return {
+      message: 'Hello world'
+    }
+  }
 }
 </script>
