@@ -12,6 +12,11 @@
         </li>
       </ul>
     </div>
+
+    <div>
+      <img src="~/assets/cat.jpg" alt="cat">
+    </div>
+
   </section>
 </template>
 
