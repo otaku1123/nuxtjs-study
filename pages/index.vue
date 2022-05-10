@@ -12,7 +12,6 @@
         </li>
       </ul>
     </div>
-
   </section>
 </template>
 
@@ -21,10 +20,16 @@ const axios = require("axios");
 let url = "https://jsonplaceholder.typicode.com/users";
 
 export default {
-  asyncData({ params }) {
-    return axios.get(url).then((res) => {
-      return { users: res.data };
-    });
+  asyncData({ params, error }) {
+    return axios
+      .get(url)
+      .then((res) => {
+        return { users: res.data };
+      })
+      .catch((e) => {
+        // console.log(e.response.status);
+        error({ statusCode: e.response.status, message: e.message });
+      });
   },
   name: "IndexPage",
   data: function () {
