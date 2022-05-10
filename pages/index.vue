@@ -1,7 +1,7 @@
 <template>
-  <section class="container">
+  <section class="container title">
     <p>{{ message }}</p>
-    <hr>
+    <hr />
     <router-link to="/price">Price Page</router-link>
     <router-link to="/mypage">My Page</router-link>
   </section>
@@ -9,11 +9,17 @@
 
 <script>
 export default {
-  name: 'IndexPage',
-  data: function() {
+  name: "IndexPage",
+  data: function () {
     return {
-      message: 'Hello world'
-    }
-  }
-}
+      message: "Hello world",
+    };
+  },
+};
 </script>
+
+<style>
+.title {
+  font-family: "Permanent Marker", cursive;
+}
+</style>
