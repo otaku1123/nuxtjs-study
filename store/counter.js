@@ -5,14 +5,20 @@ export const state = () => ({
 export const mutations = {
     updateCount: function(state, payload) {
         state.counter = state.counter + payload
+    },
+    resetCount: function(state) {
+        state.counter = 0
     }
 }
 
 export const actions = {
-    countUp(context) {
+    countUpAction(context) {
         context.commit('updateCount', 1)
     },
-    countDown(context) {
+    countDownAction(context) {
         context.commit('updateCount', -1)
     },
+    countResetAction(context) {
+        context.commit('resetCount')
+    }
 }

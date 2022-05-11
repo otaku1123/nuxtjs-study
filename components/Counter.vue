@@ -2,8 +2,9 @@
     <section>
         <h2>{{ title }}</h2>
         counter: {{ $store.state.counter.counter }}
-        <button v-on:click="$store.dispatch('counter/countUp')">+1</button>
-        <button v-on:click="$store.dispatch('counter/countDown')">-1</button>
+        <button v-on:click="$store.dispatch('counter/countUpAction')">+1</button>
+        <button v-on:click="$store.dispatch('counter/countDownAction')">-1</button>
+        <button v-on:click="$store.dispatch('counter/countResetAction')">Reset</button>
     </section>
 </template>
 
