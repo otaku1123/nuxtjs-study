@@ -2,6 +2,9 @@ const webpack = require('webpack')
 
 export default {
     target: 'static', // default is 'server'
+    env: {
+        FIREBASE_PROJECT_ID: process.env.FIREBASE_PROJECT_ID
+    },
     // Global page headers: https://go.nuxtjs.dev/config-head
     head: {
         title: 'Hello Nuxt.js',
