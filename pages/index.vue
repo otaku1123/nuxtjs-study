@@ -23,15 +23,28 @@
 
       <button v-on:click="$store.dispatch('hello/updateMessageAction', 'Commit with payload', {root: true})">Dispatch</button>
     </div>
+    <div>
+      <Counter></Counter>
+      <hr>
+      <Counter></Counter>
+      <hr>
+      <Counter></Counter>
+      <hr>
+    </div>
 
   </section>
 </template>
 
 <script>
+import Counter from '~/components/Counter.vue'
+
 const axios = require("axios");
 let url = "https://jsonplaceholder.typicode.com/users";
 
 export default {
+  components: {
+    Counter
+  },
   asyncData({ params, error }) {
     return axios
       .get(url)
