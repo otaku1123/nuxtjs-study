@@ -1,5 +1,5 @@
 import firebase from "~/plugins/firebase";
-import { firebaseAction } from "vuexfire";
+import { firestoreAction } from "vuexfire";
 
 const db = firebase.firestore()
 const todosRef = db.collection('todos')
