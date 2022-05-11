@@ -1,13 +1,34 @@
 <template>
     <div>
         <h1>TODO app</h1>
+        <div class="form">
+            <!-- addボタンを押された時、リロードを無効にする -->
+            <form v-on:submit.prevent="add">
+                <input v-model="name">
+                <button>Add</button>
+            </form>
+        </div>
     </div>
 </template>
 
 <script>
 export default {
+    // 一時的に格納するデータ
+    data: function() {
+        return {
+            name: '',
+            done: false
+        }
+    },
     created: function() {
         this.$store.dispatch('todos/init')
+    },
+    methods: {
+        // firebaseに追加する
+        add() {
+            this.$store.dispatch('todos/add', this.name)
+            this.name = ''
+        }
     }
 }
 </script>

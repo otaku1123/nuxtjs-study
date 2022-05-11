@@ -17,7 +17,7 @@ export const actions = {
             todosRef.add({
                 name: name,
                 done: false,
-                created: firebase.firestore.FieldValue.severTimestamp()
+                created: firebase.firestore.FieldValue.serverTimestamp()
             })
         }
     }),
