@@ -17,6 +17,13 @@
       <img src="~/assets/cat.jpg" alt="cat">
     </div>
 
+    <div>
+      <h2>vuex</h2>
+      <p>{{ $store.state.hello.message }}</p>
+
+      <button v-on:click="$store.dispatch('hello/updateMessageAction', 'Commit with payload', {root: true})">Dispatch</button>
+    </div>
+
   </section>
 </template>
 
