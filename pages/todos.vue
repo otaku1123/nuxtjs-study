@@ -12,19 +12,25 @@
     <!-- {{ todos }} -->
     <ul>
       <li v-for="todo in todos" :key="todo.id">
-        <input
-          type="checkbox"
-          v-bind:checked="todo.done"
-          @change="toggle(todo)"
-        />
-        <span v-bind:class="{done: todo.done }">{{ todo.name }} {{ todo.created }}</span>
-        <button v-on:click="remove(todo.id)">X</button>
+        <span v-if="todo.created">
+          <input
+            type="checkbox"
+            v-bind:checked="todo.done"
+            @change="toggle(todo)"
+          />
+          <span v-bind:class="{ done: todo.done }"
+            >{{ todo.name }} {{ todo.created.toDate() | dateFilter }}</span
+          >
+          <button v-on:click="remove(todo.id)">X</button>
+        </span>
       </li>
     </ul>
   </div>
 </template>
 
 <script>
+import moment from "moment";
+
 export default {
   // 一時的に格納するデータ
   data: function () {
@@ -54,11 +60,16 @@ export default {
       return this.$store.state.todos.todos;
     },
   },
+  filters: {
+    dateFilter: function (date) {
+      return moment(date).format("YYYY/MM/DD HH:mm:ss");
+    },
+  },
 };
 </script>
 
 <style>
-li > span.done {
-    text-decoration: line-through;
+li > span > span.done {
+  text-decoration: line-through;
 }
 </style>
