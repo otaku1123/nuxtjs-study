@@ -1,6 +1,9 @@
 <template>
   <div>
     <h1>TODO app</h1>
+    <hr>
+    <router-link to="/">Top Page</router-link>
+        <hr>
     <div class="form">
       <!-- addボタンを押された時、リロードを無効にする -->
       <form v-on:submit.prevent="add">
