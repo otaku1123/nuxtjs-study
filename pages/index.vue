@@ -4,6 +4,7 @@
     <hr />
     <router-link to="/price">Price Page</router-link>
     <router-link to="/mypage">My Page</router-link>
+    <router-link to="/todos">Todo Page</router-link>
 
     <div>
       <ul>
