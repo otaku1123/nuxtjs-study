@@ -38,6 +38,7 @@ export default {
       } else if (this.timerSeconds <= 0 && this.timerMinutes <= 0 && this.timerHour > 0) {
         this.timerHour--;
         this.timerMinutes = 59;
+        this.timerSeconds = 59;
       } else {
         console.error("Error invalid case!!");
       }
