@@ -15,6 +15,8 @@
 </template>
 
 <script>
+import sound from '@/assets/sounds/doorbell.mp3'
+
 export default {
   data: function () {
     return {
@@ -52,6 +54,9 @@ export default {
       clearInterval(this.timerId);
     },
     complete() {
+      const audio = new Audio(sound);
+      audio.play();
+
       this.timerOn = false;
       clearInterval(this.timerId);
     },
